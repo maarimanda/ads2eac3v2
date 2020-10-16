@@ -4,29 +4,30 @@ from math import sqrt
 
 app = Flask(__name__)
 
-
+@app.route('/')
 def nao_entre_em_panico():
 
-    limite = 100
+    maximo = 100
 
-    c = 1
-    p = 1
-    numero = 3
+    a = 1
+    cont = 1
+    valor = 3
     
     primos = "2, "
 
-    while p < limite:
-        ehprimo = 1
-        for i in range(2, numero):
-            if numero % i == 0:
-                ehprimo = 0
+
+    while p < maximo:
+        primo = 1
+        for p in range(2, valor):
+            if valor % p == 0:
+                primo = 0
                 break
-        if (ehprimo):
-            primos = primos + str(numero) + ","
-            p += 1
-            if(p % 10 == 0):
+        if(primo):
+            primos = primos + str(valor) + ","
+            cont += 1
+            if(cont % 10 == 0):
                 primos = primos + "<br>"
-        numero+=1
+        valor+=1
 
     return primos
 
