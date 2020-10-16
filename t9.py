@@ -16,7 +16,7 @@ def nao_entre_em_panico():
     primos = "2, "
 
 
-    while p < maximo:
+    while cont < maximo:
         primo = 1
         for p in range(2, valor):
             if valor % p == 0:
